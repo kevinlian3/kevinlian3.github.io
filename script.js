@@ -3,6 +3,24 @@ console.clear();
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
 gsap.defaults({ease: "none"});
 
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: "#orange",
+  start: "top top", 
+  end: "bottom 150px",
+  pin: "#orange-content"
+});
+
+ScrollTrigger.create({
+  trigger: "#red",
+  start: "top top", 
+  end: "+=300", // 200px past the start 
+  pin: "#red-content"
+});
+
+
 let bodyEl = document.body;
 
 function intro(){
