@@ -9,17 +9,19 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.create({
   trigger: "#orange",
   start: "top top", 
-  end: "bottom 150px",
-  pin: "#orange-content"
+  end: "+=300px",
+  pin: "#step-1"
 });
 
 ScrollTrigger.create({
   trigger: "#red",
   start: "top top", 
-  end: "+=300", // 200px past the start 
+  end: "+=400", // 200px past the start 
   pin: "#red-content"
 });
 
+
+//
 
 let bodyEl = document.body;
 
@@ -130,19 +132,3 @@ bub1
 });
 
 
-// bub2
-//   .to("#bubbles1", {
-//   opacity: 0,
-//   scale:0.7,
-//   duration: 18, 
-//   repeat: -1,
-//   repeatDelay: 4,
-//   ease: "power1.inOut",
-//   motionPath:{
-//     path: "#bub-line2",
-//     align: "#bub-line2",
-//     alignOrigin: [0.5, 0.5],
-//     start: 0.5,
-//     end: 0.9
-//   }
-// });

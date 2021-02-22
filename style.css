@@ -93,15 +93,12 @@ html {
 }
 .orange {
   background-color: #EEEEE6;
+  z-index: 2;
 }
 
 #orange-content{
-  color:black;
-  padding-top: 20px;
-  padding-left:25%;
-  text-align:left;
-
-
+  color:white;
+  text-align: left;
 }
 
 .red {
@@ -188,3 +185,24 @@ header {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
   background-size: contain;
 }
+
+/* styles for the scrolling text boxes */
+.active {
+  opacity: 1 !important;
+}
+
+.step {
+  font-family: 'Nunito Sans';
+  width: 60%;
+  height:30%;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 30px;
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .8;
+
+}
+
+
