@@ -6,12 +6,26 @@ gsap.defaults({ease: "none"});
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.create({
-  trigger: "#orange",
-  start: "top top", 
-  end: "+=300px",
-  pin: "#step-1"
-});
+let boxtl = gsap.timeline({scrollTrigger:{
+  trigger:"#orange",
+  start:"top top",
+  end:"+=500px",
+  toggleActions:"restart none none none",
+  pin:true,
+  pinSpacking:true,
+  markers:true
+}})
+.from("#orange-content", {duration:1,ease:"back",y:300,opacity:0})
+
+
+let boxt2 = gsap.timeline({scrollTrigger:{
+  trigger:"#orange-content",
+  start:"top top",
+  end:"+=100px",
+  toggleActions:"restart none none none",
+  markers:true
+}})
+.from("#orange-content2", {duration:1,ease:"back",y:300,opacity:0});
 
 ScrollTrigger.create({
   trigger: "#red",
@@ -20,37 +34,39 @@ ScrollTrigger.create({
   pin: "#red-content"
 });
 
+//Fracking Animation
 
-//
-
-let bodyEl = document.body;
-
-function intro(){
+///SHIP///
   
-  ///SHIP///
-  
-  let shipTofish = gsap.timeline();
-  
-  shipTofish
-  .from('#ship',{x: -100,duration: 1.5})
-  // .from(bodyEl,{scale: 1.5, transformOrigin: "top", duration: 2.6},"<")
+let shipTofish = gsap.timeline({scrollTrigger:{
+  trigger:"#night-bg",
+  start:"top top",
+  end:"+=300px",
+  toggleActions:"restart none none none",
+  markers:true
+}})
+.from("#ship",{x: -100,duration: .5},0)
+.from("#ground-b",{yPercent:50,duration:1},0)
+.from("#ground-m",{yPercent:0,duration:.75},0)
+.from("#ground-f",{yPercent:50,duration:.5},0)
 
-  let fishingAction = gsap.timeline({defaults: {duration: 1},
-  scrollTrigger: {
-    trigger: "#svg",
-    scrub: true,
-    scrub: 1,
-    start: "top top",
-    end: "bottom bottom",
-    // markers: true,
-  }})
-  .set("#esa-rope", {drawSVG: 0}, 0)
-  .from("#esa-rope", {drawSVG: 0}, 0)
+
+let fishingAction = gsap.timeline({defaults: {duration: 1},
+scrollTrigger: {
+  trigger: "#svg",
+  scrub: true,
+  scrub: 1,
+  start: "top top",
+  end: "bottom bottom",
+  // markers: true,
+}})
+.set("#esa-rope", {drawSVG: 0}, 0)
+.from("#esa-rope", {drawSVG: 0}, 0)
 
 
   ///SMOKE///
   
-  let smoke = gsap.timeline({repeat: -1,});
+let smoke = gsap.timeline({repeat: -1,});
 
  smoke.from(".ship-smoke",{
     duration: 2,
@@ -62,8 +78,6 @@ function intro(){
    opacity: 0
  });
   
-}
-intro();
 
 
 
@@ -84,8 +98,6 @@ gsap.to("#rock-right-b1, #rock-right-b, #rock-left-b", {
     scrub: true
   }, 
 });
-
-
 
 
 

@@ -92,13 +92,37 @@ html {
   min-height: 100%;
 }
 .orange {
+  background-image: url("img/fracking1.jpg");
   background-color: #EEEEE6;
   z-index: 2;
+  background-position: center;
+  height:500px;
+  position:fixed;
 }
 
 #orange-content{
   color:white;
   text-align: left;
+  padding: 15px;
+  border: 5px solid black;
+  background-color: black;
+  opacity: .8;
+  display: block;
+
+}
+
+#orange-content2{
+  color:white;
+  text-align: left;
+  padding: 15px;
+  border: 5px solid black;
+  background-color: black;
+  opacity: .8;
+  display: block;
+  position: relative;
+  left:200%;
+  top:100%;
+
 }
 
 .red {
@@ -106,6 +130,12 @@ html {
   height: 10%;
 }
 
+
+#red-content{
+  text-align: left;
+  padding:40px;
+
+}
 
 .green {
   background-color: #28a92b;
@@ -124,7 +154,6 @@ html, body {
   height: 100%;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
   font-size: 1.5em;
   text-align: center;
   color: white;
@@ -142,9 +171,7 @@ body {
   overflow-y: scroll;
 }
 
-h1, h2, p, li {
-  max-width: 800px;
-}
+
 
 /* HEADER */
 header {
@@ -187,22 +214,16 @@ header {
 }
 
 /* styles for the scrolling text boxes */
-.active {
+/*.active {
   opacity: 1 !important;
-}
+}*/
 
 .step {
   font-family: 'Nunito Sans';
-  width: 60%;
+  width: 30%;
   height:30%;
-  padding: 20px;
   margin-left: 50px;
   margin-top: 30px;
-  border: 5px solid black;
-  border-radius: 10px;
-  background-color: black;
-  opacity: .8;
-
 }
 
 
