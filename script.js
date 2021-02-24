@@ -31,7 +31,8 @@ ScrollTrigger.create({
   trigger: "#red",
   start: "top top", 
   end: "+=400", // 200px past the start 
-  pin: "#red-content"
+  pin: "#red-content",
+  pinSpacing:true
 });
 
 //Fracking Animation
@@ -39,8 +40,8 @@ ScrollTrigger.create({
 ///SHIP///
   
 let shipTofish = gsap.timeline({scrollTrigger:{
-  trigger:"#night-bg",
-  start:"top top",
+  trigger:"#red",
+  start:"bottom 50%",
   end:"+=300px",
   toggleActions:"restart none none none",
   markers:true
@@ -58,9 +59,9 @@ scrollTrigger: {
   scrub: 1,
   start: "top top",
   end: "bottom bottom",
-  // markers: true,
+  markers: true,
 }})
-.set("#esa-rope", {drawSVG: 0}, 0)
+.set("#esa-rope", {drawSVG: 0, delay:.01}, 0)
 .from("#esa-rope", {drawSVG: 0}, 0)
 
 
@@ -91,13 +92,6 @@ gsap.to("#rock-left-w, #rock-right-w, #rock-right-w1", {
   }, 
 });
 
-gsap.to("#rock-right-b1, #rock-right-b, #rock-left-b", {
-  yPercent: -50,
-  ease: "none",
-  scrollTrigger: {
-    scrub: true
-  }, 
-});
 
 
 
@@ -134,13 +128,38 @@ bub1
   duration: 15, 
   repeat: -1,
   ease: "power1.inOut",
-  // motionPath:{
-  //   path: "#bub-line",
-  //   align: "#bub-line",
-  //   alignOrigin: [0.5, 0.5],
-  //   start: 0.5,
-  //   end: 0.9
-  // }
+
 });
 
+// Map
+  
+window.onload = ()=>{
+
+// set initial states
+gsap.timeline() 
+    .set('#scrollDist', {width:'100%', height:'500%'})
+    .set('#containerMap', {position:'fixed', width:7900, height:5600, transformOrigin:'0 0', left:window.innerWidth/2, top:window.innerHeight/2})
+    .from('#containerMap', {opacity:0, ease:'power1.inOut', duration:1}, 0.3)
+
+//tween the svg path + circle
+gsap.timeline({defaults:{ease:'none'}, scrollTrigger:{trigger:'#scrollDist', start:'top top', end:'bottom bottom', scrub:1}}) 
+    .to('#c', {motionPath:'#p', immediateRender:true}, 0)
+    .from('#p', {drawSVG:'0 0'}, 0)
+
+//move container to follow circle
+let povDelay = 0.1, 
+    pos = { x:-3847, y:-2753 },
+    xSet = gsap.quickSetter('#containerMap', "x", "px"),
+    ySet = gsap.quickSetter('#containerMap', "y", "px");
+
+gsap.ticker.add(() => {  
+  pos.x += (-gsap.getProperty('#c', 'x') - pos.x) * povDelay;
+  pos.y += (-gsap.getProperty('#c', 'y') - pos.y) * povDelay;
+  xSet(pos.x);
+  ySet(pos.y);
+});
+
+window.onresize = ()=> { gsap.set('#containerMap', {left:window.innerWidth/2, top:window.innerHeight/2}); }
+
+}
 
