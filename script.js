@@ -1,6 +1,6 @@
 console.clear();
 
-gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, MotionPathHelper);
 gsap.defaults({ease: "none"});
 
 
@@ -65,6 +65,8 @@ scrollTrigger: {
 .from("#esa-rope", {drawSVG: 0}, 0)
 
 
+MotionPathHelper.create("#esa-rope");
+
   ///SMOKE///
   
 let smoke = gsap.timeline({repeat: -1,});
@@ -96,17 +98,6 @@ gsap.to("#rock-left-w, #rock-right-w, #rock-right-w1", {
 
 
 
-///WATER///
-
-let waterTl = gsap.timeline({repeat: -1, yoyo: true, ease: "power1.inOut"});
-
-
-
-waterTl
-.to('.water-btm',{x:20, duration: 3},0)
-.to('.water-mid',{x:-30, duration: 3},0)
-.to('.water-top',{x:-40, duration: 4},0)
-.to(".water-btw",{x:-30, duration: 2},0);
 
 
 //BUBBLES//
@@ -133,33 +124,36 @@ bub1
 
 // Map
   
-window.onload = ()=>{
-
 // set initial states
 gsap.timeline() 
     .set('#scrollDist', {width:'100%', height:'500%'})
-    .set('#containerMap', {position:'fixed', width:7900, height:5600, transformOrigin:'0 0', left:window.innerWidth/2, top:window.innerHeight/2})
+    .set('#containerMap', {width:7900, height:5600, transformOrigin:'0 0', left:window.innerWidth/2, top:window.innerHeight/2})
     .from('#containerMap', {opacity:0, ease:'power1.inOut', duration:1}, 0.3)
 
 //tween the svg path + circle
-gsap.timeline({defaults:{ease:'none'}, scrollTrigger:{trigger:'#scrollDist', start:'top top', end:'bottom bottom', scrub:1}}) 
-    .to('#c', {motionPath:'#p', immediateRender:true}, 0)
-    .from('#p', {drawSVG:'0 0'}, 0)
+gsap.timeline({defaults:{ease:'none'}, scrollTrigger:{
+    trigger:'#scrollDist', 
+    start:'top top', 
+    end:'bottom bottom', 
+    markers:true
+  }}) 
+    .to('#c', {motionPath:'#p', immediateRender:true, duration:10}, 0)
+    .from('#p', {drawSVG:'0 0', duration:10}, 0)
 
 //move container to follow circle
-let povDelay = 0.1, 
-    pos = { x:-3847, y:-2753 },
-    xSet = gsap.quickSetter('#containerMap', "x", "px"),
-    ySet = gsap.quickSetter('#containerMap', "y", "px");
+// let povDelay = 0.1, 
+//     pos = { x:-3847, y:-2753 },
+//     xSet = gsap.quickSetter('#containerMap', "x", "px"),
+//     ySet = gsap.quickSetter('#containerMap', "y", "px");
 
-gsap.ticker.add(() => {  
-  pos.x += (-gsap.getProperty('#c', 'x') - pos.x) * povDelay;
-  pos.y += (-gsap.getProperty('#c', 'y') - pos.y) * povDelay;
-  xSet(pos.x);
-  ySet(pos.y);
-});
+// gsap.ticker.add(() => {  
+//   pos.x += (-gsap.getProperty('#c', 'x') - pos.x) * povDelay;
+//   pos.y += (-gsap.getProperty('#c', 'y') - pos.y) * povDelay;
+//   xSet(pos.x);
+//   ySet(pos.y);
+// });
 
-window.onresize = ()=> { gsap.set('#containerMap', {left:window.innerWidth/2, top:window.innerHeight/2}); }
+// window.onresize = ()=> { gsap.set('#containerMap', {left:window.innerWidth/2, top:window.innerHeight/2}); }
 
-}
+
 
