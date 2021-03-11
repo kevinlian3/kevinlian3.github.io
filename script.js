@@ -35,6 +35,17 @@ ScrollTrigger.create({
   pinSpacing:true
 });
 
+
+ScrollTrigger.create({
+  trigger: "#lightblue",
+  start: "top top", 
+  end: "+=400", // 200px past the start 
+  pin: "#lightblue",
+  pinSpacing:true,
+  markers:true
+});
+
+
 //Fracking Animation
 
 ///SHIP///
@@ -100,27 +111,27 @@ gsap.to("#rock-left-w, #rock-right-w, #rock-right-w1", {
 
 
 
-//BUBBLES//
+// //BUBBLES//
 
-let bub1 = gsap.timeline();
-// let bub2 = gsap.timeline();
+// let bub1 = gsap.timeline();
+// // let bub2 = gsap.timeline();
 
-gsap.to('#bubbles4, #bubbles1',{x:-100, repeat: -1, yoyo: true, duration: 2, ease: "power1.inOut",});
+// gsap.to('#bubbles4, #bubbles1',{x:-100, repeat: -1, yoyo: true, duration: 2, ease: "power1.inOut",});
 
-bub1
-  .set("#bubbles4, #bubbles1",{
-  y: 500,
-  opacity: 0.8,
-})
-  .to("#bubbles4, #bubbles1", {
-  opacity: 0,
-  y: -200,
-  scale:0.8,
-  duration: 15, 
-  repeat: -1,
-  ease: "power1.inOut",
+// bub1
+//   .set("#bubbles4, #bubbles1",{
+//   y: 500,
+//   opacity: 0.8,
+// })
+//   .to("#bubbles4, #bubbles1", {
+//   opacity: 0,
+//   y: -200,
+//   scale:0.8,
+//   duration: 15, 
+//   repeat: -1,
+//   ease: "power1.inOut",
 
-});
+// });
 
 // Map
   

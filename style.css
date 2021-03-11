@@ -28,7 +28,7 @@ html {
 #container1 {
   color:#999;
   font-size:50px;
-  padding-top:40%;  
+  padding-top:50%;  
   position:relative;
   bottom:45%;
   text-align:center;
@@ -138,9 +138,11 @@ html {
   padding: 10px;
 }
 
-.lightblue {
+#lightblue {
   background-color: rgb(135,206,235);
   padding: 0px;
+  height:100%;
+  position:absolute;
 }
 
 
@@ -197,7 +199,10 @@ html {
   background-color:#C6ECFF;
 }
 
-
+#svg{
+  margin-left:10%;
+  display:block;
+}
 
 
 
