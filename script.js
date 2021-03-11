@@ -12,8 +12,8 @@ let boxtl = gsap.timeline({scrollTrigger:{
   end:"+=500px",
   toggleActions:"restart none none none",
   pin:true,
-  pinSpacking:true,
-  markers:true
+  pinSpacking:true
+  // markers:true
 }})
 .from("#orange-content", {duration:1,ease:"back",y:300,opacity:0})
 
@@ -22,8 +22,8 @@ let boxt2 = gsap.timeline({scrollTrigger:{
   trigger:"#orange-content",
   start:"top top",
   end:"+=100px",
-  toggleActions:"restart none none none",
-  markers:true
+  toggleActions:"restart none none none"
+  // markers:true
 }})
 .from("#orange-content2", {duration:1,ease:"back",y:300,opacity:0});
 
@@ -41,8 +41,8 @@ ScrollTrigger.create({
   start: "top top", 
   end: "+=400", // 200px past the start 
   pin: "#lightblue",
-  pinSpacing:true,
-  markers:true
+  pinSpacing:true
+  // markers:true
 });
 
 
@@ -54,8 +54,8 @@ let shipTofish = gsap.timeline({scrollTrigger:{
   trigger:"#red",
   start:"bottom 50%",
   end:"+=300px",
-  toggleActions:"restart none none none",
-  markers:true
+  toggleActions:"restart none none none"
+  // markers:true
 }})
 .from("#ship",{x: -100,duration: .5},0)
 .from("#ground-b",{yPercent:50,duration:1},0)
@@ -69,8 +69,8 @@ scrollTrigger: {
   scrub: true,
   scrub: 1,
   start: "top top",
-  end: "bottom bottom",
-  markers: true,
+  end: "bottom bottom"
+  // markers: true,
 }})
 .set("#esa-rope", {drawSVG: 0, delay:.01}, 0)
 .from("#esa-rope", {drawSVG: 0}, 0)
