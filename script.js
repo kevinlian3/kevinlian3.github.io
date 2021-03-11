@@ -145,8 +145,8 @@ gsap.timeline()
 gsap.timeline({defaults:{ease:'none'}, scrollTrigger:{
     trigger:'#scrollDist', 
     start:'top top', 
-    end:'bottom bottom', 
-    markers:true
+    end:'bottom bottom'
+    // markers:true
   }}) 
     .to('#c', {motionPath:'#p', immediateRender:true, duration:10}, 0)
     .from('#p', {drawSVG:'0 0', duration:10}, 0)
