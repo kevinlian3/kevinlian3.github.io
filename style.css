@@ -28,7 +28,7 @@ html {
 #container1 {
   color:#999;
   font-size:50px;
-  padding-top:50%;  
+  padding-top:40%;  
   position:relative;
   bottom:45%;
   text-align:center;
@@ -83,6 +83,15 @@ html {
   position:fixed;
 }
 
+.wind {
+  background-image: url("img/windfarm.jpg");
+  background-color: #EEEEE6;
+  z-index: 2;
+  background-position: center;
+  height:500px;
+  position:fixed;
+}
+
 #orange-content{
   color:white;
   text-align: left;
@@ -108,7 +117,7 @@ html {
 
 }
 
-.red {
+/*.red {
   background-color: rgb(135,206,235);
   height: 5%;
   height:500px;
@@ -119,7 +128,7 @@ html {
   text-align: left;
   padding:40px;
 
-}
+}*/
 
 .green {
   background-color: #28a92b;
@@ -138,13 +147,45 @@ html {
   padding: 10px;
 }
 
+
+
 #lightblue {
   background-color: rgb(135,206,235);
   padding: 0px;
   height:100%;
-  position:absolute;
+  position:relative;
 }
 
+#darkblue {
+  background-color: rgb(135,206,235);
+  padding: 0px;
+  height:100%;
+  position:relative;
+}
+
+
+.titleWord{
+  position:absolute;
+  z-index: 1;
+  color:black;
+  top:25%;
+  left:10%;
+  font-weight:bold;
+  font-family: Arial;
+}
+
+
+.titleWord2{
+  position:absolute;
+  font-size:25px;
+  z-index: 1;
+  text-align: left;
+  color:black;
+  top:35%;
+  left:10%;
+  font-weight:bold;
+  font-family: Arial;
+}
 
 /* SCROLL DOWN */ 
 .scroll-down {
@@ -204,6 +245,32 @@ html {
   display:block;
 }
 
+
+/*Slides*/
+
+.comparisonSection {
+  position: relative;
+  padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
+}
+.comparisonImage {
+  width: 100%;
+  height: 100%;
+}
+.afterImage {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transform: translate(100%, 0px);
+}
+.afterImage img {
+  transform: translate(-100%, 0px);
+}
+.comparisonImage img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
 
 
 
