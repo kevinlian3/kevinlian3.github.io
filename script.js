@@ -144,9 +144,9 @@ gsap.utils.toArray(".comparisonSection").forEach(section => {
       defaults: {ease: "none"}
     });
   // animate the container one way...
-  tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
+  tl.fromTo(section.querySelector(".afterImage"), { xPercent: -100, x: 0}, {xPercent: 0})
     // ...and the image the opposite way (at the same time)
-    .fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
+    .fromTo(section.querySelector(".afterImage img"), {xPercent: 100, x: 0}, {xPercent: 0}, 0);
 });
 
 
