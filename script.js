@@ -1,74 +1,72 @@
-console.clear();
-gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, MotionPathHelper);
-gsap.defaults({ease: "none"});
-
-
 gsap.registerPlugin(ScrollTrigger);
 
-
-let boxtl = gsap.timeline({scrollTrigger:{
-  trigger:"#orange",
-  start:"top top",
-  end:"+=1000px",
-  toggleActions:"restart none none none",
-  pin:true,
-  //pinSpacking:true
-  // markers:true
-}})
-.from("#orange-content", {duration:1,ease:"back",y:300,opacity:0})
-
-
-let boxt2 = gsap.timeline({scrollTrigger:{
-  trigger:"#orange-content",
-  start:"top top",
-  end:"+=1000px",
-  toggleActions:"restart none none none",
-  // markers:true
-}})
-.from("#orange-content2", {duration:1,ease:"back",y:300,opacity:0});
-
+// gsap.utils.toArray(".panel").forEach((panel, i) => {
 // ScrollTrigger.create({
-//   trigger: "#red",
-//   start: "top top", 
-//   end: "+=400", // 200px past the start 
-//   pin: "#red-content",
-//   pinSpacing:true
+//     trigger: panel,
+//     start: "top top", 
+//     pin: true, 
+//     pinSpacing: false 
+//   });
 // });
 
 
+gsap.utils.toArray('.step').forEach(step => {
+  ScrollTrigger.create({
+    trigger: step,
+    start: 'top 80%',
+    end: 'center top',
+    toggleClass: 'active',
+    id: 'toggle-active-class'
+  });
+});
+
 ScrollTrigger.create({
-  trigger: "#lightblue",
-  start: "top top", 
-  end: "+=1600", // 200px past the start 
-  pin: "#lightblue",
-  pinSpacing:true
-  // markers:true
+  trigger: '#fracking1',
+  endTrigger: "#step-2",
+  start: 'center center',
+  end: "+=761px",
+  pin: true,
+  pinSpacing: false,
+  markers:true,
+  id: 'chart-pin'
 });
 
+// ScrollTrigger.create({
+//   snap: 1 / 4 // snap whole page to the closest section!
+// });
 
 
+//Animation of the Fracking Image1 
 
-// Slides
+// let tl = gsap.timeline({
+// 	scrollTrigger:{
+// 		trigger:".red",
+// 		start:"center bottom"
+// 	}
+// });
 
-gsap.utils.toArray(".comparisonSection").forEach(section => {
-  let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "center center",
-        // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
-        end: () => "+=" + section.offsetWidth, 
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
-      },
-      defaults: {ease: "none"}
-    });
-  // animate the container one way...
-  tl.fromTo(section.querySelector(".afterImage"), { xPercent: -100, x: 0}, {xPercent: 0})
-    // ...and the image the opposite way (at the same time)
-    .fromTo(section.querySelector(".afterImage img"), {xPercent: 100, x: 0}, {xPercent: 0}, 0);
-});
+// tl.from("#fracking1", {x:-200,opacity:0, duration:1.5})
 
 
+// Animateion TextBox1 
+
+// let boxtl = gsap.timeline({scrollTrigger:{
+//   trigger:".red",
+//   start:"center bottom",
+//   end:"+=1000px",
+//   toggleActions:"restart none none none",
+//   pin:true,
+// }}).from("#box1", {duration:1,ease:"back",y:300,opacity:0})
+// .to("#box1",{opacity:0,y:-300})
 
 
+// Animation TextBox2
+
+// let boxt2 = gsap.timeline({scrollTrigger:{
+//   trigger:"#orange-content",
+//   start:"top top",
+//   end:"+=1000px",
+//   toggleActions:"restart none none none",
+//   // markers:true
+// }})
+// .from("#box2", {duration:1,ease:"back",y:300,opacity:0});

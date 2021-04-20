@@ -1,190 +1,90 @@
-body,
-html {
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+html, body {
   margin: 0;
-  padding: 0;
-  overflow: y-scroll;
-  height: 100%;
-  font-family: 'Roboto';
+  height: 100vh;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
-  font-family: "Signika Negative", sans-serif, Arial;
+  font-family: "Signika Negate", sans-serif, Arial;
+}
+
+h1, h2, p, li {
+  max-width: 800px;
+  font-family:'RB Garamond', san serif;
+}
+
+#logo{
+  position:absolute;
+  left:10px;
+  top:10px;
+  width:100px;
+}
+.panel{
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: left;
+  color: white;
+}
+
+.panel.align-top {
+  align-items: flex-start;
+}
+
+.panel h1 {
+  font-size: 1.8em;
+  color: white;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.panel.description {
+  padding-bottom: 60px;
+}
+
+.panel p, .panel li {
+  color: black;
+  font-weight: 400;
+  text-align: left;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0.3em 0 1em 0;
+}
+
+.panel p strong, .panel li strong {
+  color: white;
+  font-weight: 400;
+}
+
+.panel p code, .panel li code {
+  background-color: rgba(255,255,255,0.15);
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.panel li {
   margin: 0;
 }
 
-/*introPanel*/
-#myVideo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.blue{
-  height:500px;
-}
-
-/*FLip */
-#container1 {
-  color:#999;
-  font-size:50px;
-  padding-top:40%;  
-  position:relative;
-  bottom:45%;
-  text-align:center;
-}
-
-#flip {
-  height:65px;
-  overflow:hidden;
-}
-
-#flip > div > div {
-  color:#fff;
-  padding:4px 12px;
-  height:45px;
-  margin-bottom:45px;
-  display:inline-block;
-}
-
-#flip div:first-child {
-  animation: show 10s linear infinite;
-}
-
-#flip div div {
-  background:#42c58a;
-}
-#flip div:first-child div {
-  background:#4ec7f3;
-}
-#flip div:last-child div {
-  background:#DC143C;
-}
-
-@keyframes show {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
-}
-
-/*Panels */
-
-.orange {
-  background-image: url("img/fracking1.jpg");
-  background-color: #EEEEE6;
-  z-index: 2;
-  background-position: center;
-  height:500px;
-  position:fixed;
-}
-
-.wind {
-  background-image: url("img/windfarm.jpg");
-  background-color: #EEEEE6;
-  z-index: 2;
-  background-position: center;
-  height:500px;
-  position:fixed;
-}
-
-#orange-content{
-  color:white;
-  text-align: left;
-  padding: 15px;
-  border: 5px solid black;
-  background-color: black;
-  opacity: .8;
-  display: block;
-
-}
-
-#orange-content2{
-  color:white;
-  text-align: left;
-  padding: 15px;
-  border: 5px solid black;
-  background-color: black;
-  opacity: .8;
-  display: block;
-  position: relative;
-  left:200%;
-  top:100%;
-
-}
-
-/*.red {
-  background-color: rgb(135,206,235);
-  height: 5%;
-  height:500px;
+.intro {
+  background-color: #f9f9f9;
 }
 
 
-#red-content{
-  text-align: left;
-  padding:40px;
-
-}*/
-
-.green {
-  background-color: #28a92b;
-}
-
-.panel {
-	width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  text-align: center;
-  color: white;
-  position: relative;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-
-
-#lightblue {
-  background-color: rgb(135,206,235);
-  padding: 0px;
+.introMap{
+  width:40%;
+  display:flex;
   height:100%;
-  position:relative;
-}
-
-#darkblue {
-  background-color: rgb(135,206,235);
-  padding: 0px;
-  height:100%;
-  position:relative;
-}
-
-
-.titleWord{
-  position:absolute;
-  z-index: 1;
-  color:black;
-  top:25%;
-  left:10%;
-  font-weight:bold;
-  font-family: Arial;
-}
-
-
-.titleWord2{
-  position:absolute;
-  font-size:25px;
-  z-index: 1;
-  text-align: left;
-  color:black;
-  top:35%;
-  left:10%;
-  font-weight:bold;
-  font-family: Arial;
+  margin-right:0px;
+  padding-right:0px;
 }
 
 /* SCROLL DOWN */ 
@@ -199,6 +99,7 @@ html {
   font-size: 16px;
   overflow: visible;
 }
+
 .scroll-down .arrow {
   position: relative;
   top: -4px;
@@ -210,66 +111,88 @@ html {
 }
 
 
-.step {
-  font-family: 'Nunito Sans';
-  width: 30%;
-  height:30%;
-  margin-left: 50px;
-  margin-top: 30px;
+/* Lines */ 
+.st2 {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: dash 4s linear forwards;
+  animation-iteration-count: 1;
+  fill:none;stroke:#0a361e;
+  stroke-width:0.3px;
+  stroke-linecap:butt;
+  stroke-linejoin:miter;
+  stroke-miterlimit:10;
+  stroke-opacity:1
 }
 
-#fracking-content{
-  color:white;
-  text-align: left;
-  top:0%;
-  padding: 15px;
-  position:absolute;
-  border: 5px solid black;
-  background-color: black;
-  opacity: .8;
-  display: block;
+.st3 {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: dash 20s 2s  linear forwards;
+  animation-iteration-count: 1;
 }
 
-/*Map*/
-#map {
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*Panel 2*/ 
+
+.active {
+  opacity: 1 !important;
+}
+
+
+.red{
+  background-color: #f9f9f9; 
   width: 100%;
-  height: 100%;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  position:relative;
-  background-color:#C6ECFF;
+  height: 200vh;
+  display: block;
+  font-weight: 600;
+  font-size: 1.7em;
+  text-align: center;
 }
 
-#svg{
-  margin-left:10%;
+#fracking1{
+  margin-right: 60%;
+  width:40%; 
+  height:90vh;
+  object-fit:cover;
+}
+
+video{
+  width:100px;
+  height:100px;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+
+#scroll-steps{
   display:block;
 }
 
+.step {
+  font-family: 'Nunito Sans';
+  padding: 20px;
+  margin-left: 45%;
+  margin-right:10%;
+  opacity: 0.2;
+}
 
-/*Slides*/
 
-.comparisonSection {
-  position: relative;
-  padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
+.orange {
+  background-color: #f0f0f0;
 }
-.comparisonImage {
-  width: 100%;
-  height: 100%;
+
+.purple {
+  background-color: #8d3dae;
+  
 }
-.afterImage {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  transform: translate(100%, 0px);
-}
-.afterImage img {
-  transform: translate(-100%, 0px);
-}
-.comparisonImage img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
+.green {
+  background-color: #28a92b;
 }
 
 
