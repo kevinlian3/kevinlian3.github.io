@@ -27,7 +27,7 @@ ScrollTrigger.create({
   end: "+=761px",
   pin: true,
   pinSpacing: false,
-  markers:true,
+  // markers:true,
   id: 'chart-pin'
 });
 
