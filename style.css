@@ -254,7 +254,20 @@ video{
   background-color: #f9f9f9;
   border-radius: 10px;
   z-index:2;
+  max-width:600px;
 }
+
+
+#step-6{
+  font-family: 'EB Garamond';
+  padding: 20px;
+  margin-left: 5%;
+  margin-right:65% ! important;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  z-index:2;
+}
+
 
 #container {
   z-index:1;
