@@ -284,8 +284,26 @@ video{
 
 
 .green {
-  background-color: #28a92b;
+  background-color: #232223;
+  position:relative;
+  height:100vh;
+  z-index:1;
 }
+
+#wellLocation{
+  object-fit:contain;
+  width:35%;
+  position:absolute;
+  right:0px;
+  top:150px;
+}
+
+#wellText{
+  position:absolute;
+  left:100px;
+  
+}
+
 
 
 
