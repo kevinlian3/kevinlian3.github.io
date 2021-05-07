@@ -1,24 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
-var videoElem = document.getElementById("fracking1");
-var videoElemn3 = document.getElementById("frackingVid3");
-
-ScrollTrigger.create({
-    trigger: videoElem,
-    onEnter: () => videoElem.play(),
-    onEnter: () => videoElem.playbackRate = 0.9,
-    onEnterBack: () => videoElem.play(),
-    onLeave: () => videoElem.pause(),
-    onLeaveBack: () => videoElem.pause(),
-  });
-
 gsap.utils.toArray('.step').forEach(step => {
   ScrollTrigger.create({
     trigger: step,
     start: 'top 80%',
     end: 'center top',
     toggleClass: 'active',
-    id: 'toggle-active-class'
   });
 });
 
@@ -57,14 +44,12 @@ const tl = gsap.timeline({
   }
 });
 
-
-
 tl.to('#frackingExp1',{opacity:0},0);
 tl.to('#step-4',{opacity:1},0);
 tl.to('#step-45 ',{color:"white"},0);
 tl.to('#step-4',{backgroundColor:"black",duration:5},0);
 
-
+var videoElemn3 = document.getElementById("frackingVid3");
 
 const video = document.querySelector(".video-background");
 let src = video.currentSrc || video.src;
