@@ -1,27 +1,19 @@
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  position:relative;
-}
-
 html, body {
   margin: 0;
   height: 100vh;
   position:relative;
 }
 
-h1, h2, h3, p, li {
-  max-width: 800px;
+h1, h2, h3, h4, h5, h6, p, li {
   font-family:'EB Garamond', Roboto;
+  margin: 0 auto;
 }
 
 .panel{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: left;
+  background-color: #000;
+  color:#f9f9f9;
+  height: 100vh;
 }
 
 #logo{
@@ -31,57 +23,27 @@ h1, h2, h3, p, li {
   width:10%;
 }
 
-.panel h1 {
-  font-size: 6.0rem;
-  font-weight: 300;
-  margin: 0 auto;
-  color:#0a361e;
-}
-
-.panel h2 {
-  font-size: 5.0rem;
-  font-weight: 300;
-  margin: 0 auto;
-  color:#0a361e;
-}
-
-.panel h3 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  margin: 0 auto;
-  color:#0a361e;
-  text-align: left;
-}
-
 .panel p {
-  color: black;
-  font-weight: 400;
+  color: #f9f9f9;
   text-align: left;
-  font-size: 1.2rem;
-  line-height: 2.0rem;
-  margin: 0.3rem 0 1rem 0;
 }
 
 
-/* Intro Panel */ 
-.intro {
-  background-color: #f9f9f9;
+hr{
+  opacity: 1;
+  height: 3px;
+  background-color: #1f80d1;
 }
 
-.introMap{
-  width:40%;
-  display:flex;
-  height:100%;
-}
 
 /* Lines */ 
 .st2 {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
-  animation: dash 4s linear forwards;
+  animation: dash 3s linear forwards;
   animation-iteration-count: 1;
-  fill:none;stroke:#0a361e;
-  stroke-width:0.3px;
+  fill:none;stroke:#1f80d1;
+  stroke-width:1.5px;
   stroke-linecap:butt;
   stroke-linejoin:miter;
   stroke-miterlimit:10;
@@ -91,8 +53,14 @@ h1, h2, h3, p, li {
 .st3 {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
-  animation: dash 20s 2s  linear forwards;
+  animation: dash 10s 2s  linear forwards;
   animation-iteration-count: 1;
+  fill:none;stroke:#1f80d1;
+  stroke-width:1.5px;
+  stroke-linecap:butt;
+  stroke-linejoin:miter;
+  stroke-miterlimit:10;
+  stroke-opacity:1
 }
 
 @keyframes dash {
@@ -107,7 +75,7 @@ h1, h2, h3, p, li {
   bottom: 30px;
   left: 50%;
   transform: translate(-50%, 0);
-  color: black;
+  color: white;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 16px;
@@ -120,16 +88,13 @@ h1, h2, h3, p, li {
   margin: 0 auto;
   width: 20px;
   height: 20px;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
   background-size: contain;
 }
 
-
-.step {
+.step{
   padding: 20px;
-  margin-left: 45%;
-  margin-right:10%;
-  opacity: 1;
+  opacity: 0.2;
 }
 
 .active {
@@ -146,54 +111,29 @@ video {
 
 /*Panel 2*/ 
 .panel2{
-  background-color: #f9f9f9; 
-  width: 100%;
   height: 200vh;
   display: block;
-  font-weight: 600;
-  font-size: 1.6em;
-  text-align: center;
+  text-align: left;
+  background-color: #000;
+  color:#f9f9f9;
 }
-
-#fracking1{
-  margin-right: 60%;
-  width:40%; 
-  height:90vh;
-  object-fit:cover;
-}
-
 
 
 /*Panel 3*/ 
-.orange {
-  background-color: #f9f9f9; 
-  width:100%;
+.panel3 {
   height:200vh;
   display:block;
-  font-size:1.6em;
   text-align: left;
+  background-color: #000;
+  color:#f9f9f9;
 }
 
-#step-3 {
-  font-family: 'EB Garamond';
-  margin-right: 65%;
-  margin-left:5%;
-  opacity: 0.2;
-
-}
 #step-4{
-  font-family: 'EB Garamond';
-  margin-left: 5%;
   margin-right:65% ! important;
-  background-color: #f9f9f9;
   z-index:3;
 }
 
 .frackingExp{
-  margin-left: 40%;
-  width:60%; 
-  height:90vh;
-  object-fit:contain;
   opacity:1;
 }
 
@@ -223,7 +163,6 @@ video {
 }
 
 #step-5 {
-  font-family: 'EB Garamond';
   background-color: black;
   z-index:3;
   margin-left:5%;
@@ -231,7 +170,6 @@ video {
 }
 
 #step-6{
-  font-family: 'EB Garamond';
   margin-left:5%;
   margin-right:65% !important;
   background-color: black;
@@ -239,7 +177,6 @@ video {
 }
 
 #step-7{
-  font-family: 'EB Garamond';
   margin-left:5%;
   margin-right:65% !important;
   background-color: black;
